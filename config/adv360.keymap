@@ -54,6 +54,16 @@
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67 37 38 53 68 69 70 41 42 43 44>;
         };
+
+        backspace: backspace {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BACKSPACE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -64,11 +74,11 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1        &kp N2       &kp N3       &kp N4        &kp N5  &tog 1                                                  &mo 3      &kp N6  &kp N7        &kp N8       &kp N9       &kp N0           &kp MINUS
-&kp TAB    &kp Q         &kp W        &kp E        &kp R         &kp T   &none                                                   &none      &kp Y   &kp U         &kp I        &kp O        &kp P            &kp BSLH
-&kp ESC    &lhm LSHFT A  &lhm LGUI S  &lhm LALT D  &lhm LCTRL F  &kp G   &none     &kp LGUI  &kp LALT      &kp RCTRL  &kp RGUI   &none      &kp H   &rhm RCTRL J  &rhm RALT K  &rhm RGUI L  &rhm RSHFT SEMI  &kp SQT
-&kp LSHFT  &kp Z         &kp X        &kp C        &kp V         &kp B                       &kp HOME      &kp PG_UP                        &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH         &kp RSHFT
-&mo 2      &kp GRAVE     &kp CAPS     &kp LEFT     &kp RIGHT             &kp BSPC  &kp DEL   &kp END       &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP        &kp DOWN     &kp LBKT     &kp RBKT         &mo 2
+&kp EQUAL  &kp N1        &kp N2       &kp N3       &kp N4        &kp N5  &tog 1                                                                            &mo 3      &kp N6  &kp N7        &kp N8       &kp N9       &kp N0           &kp MINUS
+&kp TAB    &kp Q         &kp W        &kp E        &kp R         &kp T   &none                                                                             &none      &kp Y   &kp U         &kp I        &kp O        &kp P            &kp BSLH
+&kp ESC    &lhm LSHFT A  &lhm LGUI S  &lhm LALT D  &lhm LCTRL F  &kp G   &none                               &kp LGUI  &kp LALT      &kp RCTRL  &kp RGUI   &none      &kp H   &rhm RCTRL J  &rhm RALT K  &rhm RGUI L  &rhm RSHFT SEMI  &kp SQT
+&kp LSHFT  &kp Z         &kp X        &kp C        &kp V         &kp B                                                 &kp HOME      &kp PG_UP                        &kp N   &kp M         &kp COMMA    &kp DOT      &kp FSLH         &kp RSHFT
+&mo 2      &kp GRAVE     &kp CAPS     &kp LEFT     &kp RIGHT             &backspace LC(BACKSPACE) BACKSPACE  &kp DEL   &kp END       &kp PG_DN  &kp ENTER  &kp SPACE          &kp UP        &kp DOWN     &kp LBKT     &kp RBKT         &mo 2
             >;
         };
 
